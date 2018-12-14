@@ -1,5 +1,5 @@
-# Mirror app level attributes in Okta application user assignments
-Use this script to mirror an app level attribute to another app level attribute for application user assignments in Okta. 
+# Mirror application level attributes in Okta application user assignments
+Use this script to mirror an application level attribute to another application level attribute in application user assignments in Okta. 
 
 This script is useful in cases when you have numerous individual user assignments to an application and you would like to copy the value of one attribute to another attribute for all users assigned individually.
 
