@@ -35,11 +35,11 @@ If (!$app)
 {
 	Write-Output "Details verified, initiating request to retrieve users and update them...";
 
-	$url = -join("https://", $org, "/api/v1/apps/", $app, "/users")
+	$baseurl = -join("https://", $org, "/api/v1/apps/", $app, "/users")
 	$headers = @{'Authorization' = "SSWS $api"}
 	
 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-	$response = Invoke-WebRequest $url -Method 'GET' -ContentType 'application/json' -Headers $headers	
+	$response = Invoke-WebRequest $baseurl -Method 'GET' -ContentType 'application/json' -Headers $headers	
 
 	$content = $response.Content | ConvertFrom-Json
 	
@@ -48,7 +48,7 @@ If (!$app)
 		If(!$content[$i]._links.group)
 		{
 			$content[$i].profile.$to = $content[$i].profile.$from
-			$put = -join($url, "/", $content[$i].id);
+			$put = -join($baseurl, "/", $content[$i].id);
 			$body = $content[$i] | ConvertTo-Json
 			
 			Try
@@ -88,7 +88,7 @@ If (!$app)
 				If(!$content[$i]._links.group)
 				{
 					$content[$i].profile.$to = $content[$i].profile.$from
-					$put = -join($url, "/", $content[$i].id);
+					$put = -join($baseurl, "/", $content[$i].id);
 					$body = $content[$i] | ConvertTo-Json
 					
 					Try
