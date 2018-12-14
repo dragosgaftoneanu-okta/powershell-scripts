@@ -1,14 +1,5 @@
 # Mirror app level attributes in Okta application user assignments
 #
-# ===Description===
-# Use this script to mirror an app level attribute to another app level attribute for application user assignments in Okta.
-# This script will update only individual assignments. Okta will reject any updates on user assignments that are done through a group.
-# To modify group assignments, please navigate to the application in Okta >> Assignments tab >> Groups >> Edit and modify the group.
-#
-# ===Usage===
-# .\mirror-app-level-attributes-in-okta-application-user-assignments.ps1
-# Set up the required parameters below in the script or call them using argv from command line
-#
 # ===Disclaimer===
 # Use these scripts at your own risk. All scripts are provided AS IS without warranty of any kind. Okta disclaims all implied warranties
 # including, without limitation, any implied warranties of fitness for a particular purpose. We highly recommend testing scripts in a preview
