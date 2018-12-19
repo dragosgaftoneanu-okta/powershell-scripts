@@ -85,7 +85,7 @@ If (!$app)
 	
 			For ($i=0; $i -lt $content.length; $i++) 
 			{
-				If(!$content[$i]._links.group)
+				If(!$content[$i]._links.group -and ([string]::IsNullOrEmpty($content[$i].profile.$to)))
 				{
 					$content[$i].profile.$to = $content[$i].profile.$from
 					$put = -join($baseurl, "/", $content[$i].id);
